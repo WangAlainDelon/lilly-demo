@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: lilly-demo
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/permission?useUnicode=true&characterEncoding=utf-8&useSSL=false}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:133309}
+    driver-class-name: com.mysql.jdbc.Driver
+  session:
+    store-type: none
+  thymeleaf:
+    prefix:
+      classpath: /templates   # 访问template下的html文件需要配置模板，映射
+    cache: false
+    suffix: .html # 开发时关闭缓存,不然没法看到实时页面
+logging:
+  level:
+    org.apache.ibatis: ${LOG_LEVEL:debug}
+    io.choerodon: ${LOG_LEVEL:debug}
+    org.hzero: ${LOG_LEVEL:debug}
+
+#配置浏览器安全还是app安全
+#配置登录页面
+
+lilly:
+  security:
+     browser:
+#        loginPage: /signIn
+        loginType: JSON
+     validateCode:
+        imageCode:
+           width: 200
+           length: 1
+           height: 50
+           expireTime: 30
+#           url: /user,/user/*
+        smsCode:
+           length: 6
+           expireTime: 30
