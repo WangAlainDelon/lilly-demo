@@ -73,4 +73,12 @@ public class TestController {
         return userDTO1;
     }
 
+
+    /**
+     * 标准注册页面
+     */
+    @GetMapping("/demo-signUp")
+    public String standardSigUp() {
+        return "demo-signUp";
+    }
 }

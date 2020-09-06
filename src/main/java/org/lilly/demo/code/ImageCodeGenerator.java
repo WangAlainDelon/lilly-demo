@@ -12,7 +12,7 @@
 // * User: Mr.Wang
 // * Date: 2020/6/13
 // */
-//@Component(value = "validateImageGenerator")
+//@Component(value = "imageValidateGenerator")
 //public class ImageCodeGenerator implements ValidateGenerator {
 //    @Override
 //    public ImageCode generator() {

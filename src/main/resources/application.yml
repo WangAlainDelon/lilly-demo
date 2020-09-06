@@ -17,23 +17,39 @@ logging:
   level:
     org.apache.ibatis: ${LOG_LEVEL:debug}
     io.choerodon: ${LOG_LEVEL:debug}
-    org.hzero: ${LOG_LEVEL:debug}
+    org.lilly: ${LOG_LEVEL:debug}
 
 #配置浏览器安全还是app安全
 #配置登录页面
-
 lilly:
   security:
      browser:
 #        loginPage: /signIn
         loginType: JSON
+        signUpUrl: /demo-signUp
      validateCode:
         imageCode:
            width: 200
            length: 1
            height: 50
-           expireTime: 30
+           expireTime: 300
 #           url: /user,/user/*
         smsCode:
            length: 6
-           expireTime: 30
+           expireTime: 300
+
+     social:
+        qq:
+           appId:
+           appSecret:
+           providerId: qq
+        filterProcessesUrl: /login
+security:
+  oauth2:
+    client:
+      client-id: lilly
+      client-secret: lillySecret
+#    resource:
+server:
+  port: 80
+#      userInfoUri: BUGFIX
